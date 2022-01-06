@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://kit.fontawesome.com/5714674082.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+    <meta charset="utf-8" />
+
+    <style>
+        #start-btn {
+            padding: 25px 30px;
+            color: white;
+            font-size: 35px;
+            border: none;
+        }
+        #start-btn.start {
+            background-color: #3A5;
+        }
+        #start-btn.stop {
+            padding: 25px 30px;
+            background-color: #A35;
+        }
+    </style>
+  </head>
+  <body>
+    <button type=button id="start-btn" class="start"><i class="fas fa-play"></i></button>
+    <p id="output"></p>
+  </body> 
+</html>
+
+
+
+<script>
+    
+let startBtn = document.getElementById("start-btn");
+let stopBtn  = document.getElementById("stop-btn");
+let stopDraw = false;
+
+let output = document.getElementById("output");
+
+startBtn.onclick = function () {
+    if (this.className=="start") {
+        this.className = "stop";
+        this.innerHTML = "<i class='fas fa-pause'></i>";
+        stopDraw = false;
+        loop();
+    } 
+    else if (this.className=="stop") {
+        this.className = "start";
+        this.innerHTML = "<i class='fas fa-play'></i>";
+        stopDraw = true;
+        
+    } else {
+        console.log("Unknown class name for #start-btn");
+    }
+    // output.innerHTML = stopDraw;
+    console.log(this.className);
+    console.log(this.innerHTML);
+    // loop();
+}
+
+
+
+
+</script>
+<script src="main.js"></script>
